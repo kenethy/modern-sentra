@@ -1,0 +1,252 @@
+/* Custom CSS for Modern Sentra */
+
+:root {
+    /* Primary Brand Colors - Enhanced Brown Palette */
+    --primary: #99765c;
+    /* Main brand color - warm brown */
+    --primary-dark: #876754;
+    /* Darker brown for hover states */
+    --primary-light: #b79b86;
+    /* Lighter brown for backgrounds */
+    --primary-ultra-light: #f0e9e4;
+    /* Very light brown for subtle backgrounds */
+
+    /* Enhanced Brown Accent Colors */
+    --accent-1: #c69c6d;
+    /* Brighter golden brown */
+    --accent-1-light: #d4a76a;
+    /* Golden brown */
+    --accent-2: #b07d4a;
+    /* Darker golden brown */
+    --accent-2-light: #c69c6d;
+    /* Brighter golden brown */
+    --accent-3: #e3bc7a;
+    /* Light golden */
+    --accent-3-light: #e6d2b5;
+    /* Light cream */
+
+    /* Neutral Colors - Kept similar for consistency */
+    --dark: #2d2a26;
+    /* Almost black with brown undertone */
+    --gray-dark: #5a5754;
+    /* Dark gray with warm undertone */
+    --gray: #8c8883;
+    /* Medium gray with warm undertone */
+    --gray-light: #d8d3cf;
+    /* Light gray with warm undertone */
+    --light: #f8f6f4;
+    /* Off-white with warm undertone */
+
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    --gradient-accent: linear-gradient(90deg, var(--accent-1), var(--accent-3));
+    --gradient-multi: linear-gradient(90deg, var(--accent-2), var(--accent-1), var(--accent-3), var(--primary), var(--primary-dark));
+}
+
+/* Logo styling */
+.logo-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.logo-modern {
+    color: var(--accent-1);
+    text-shadow: 0 0 5px rgba(6, 214, 160, 0.3);
+}
+
+.logo-sentra {
+    color: var(--primary);
+    text-shadow: 0 0 5px rgba(17, 138, 178, 0.3);
+}
+
+/* Construction theme elements */
+.construction-heading {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+}
+
+/* Body text */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gray-dark);
+    background-color: var(--light);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Navigation */
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 6px rgba(17, 138, 178, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(17, 138, 178, 0.3);
+}
+
+.btn-accent-1 {
+    background-color: var(--accent-1);
+    border-color: var(--accent-1);
+    color: white;
+    box-shadow: 0 4px 6px rgba(6, 214, 160, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-accent-1:hover {
+    background-color: var(--accent-1-light);
+    border-color: var(--accent-1-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(6, 214, 160, 0.3);
+}
+
+.btn-accent-2 {
+    background-color: var(--accent-2);
+    border-color: var(--accent-2);
+    color: white;
+    box-shadow: 0 4px 6px rgba(255, 107, 107, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-accent-2:hover {
+    background-color: var(--accent-2-light);
+    border-color: var(--accent-2-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 107, 107, 0.3);
+}
+
+.btn-accent-3 {
+    background-color: var(--accent-3);
+    border-color: var(--accent-3);
+    color: var(--dark);
+    box-shadow: 0 4px 6px rgba(255, 209, 102, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-accent-3:hover {
+    background-color: var(--accent-3-light);
+    border-color: var(--accent-3-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 209, 102, 0.3);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-outline-accent-1 {
+    border: 2px solid var(--accent-1);
+    color: var(--accent-1);
+    transition: all 0.3s ease;
+}
+
+.btn-outline-accent-1:hover {
+    background-color: var(--accent-1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-gradient {
+    background: var(--gradient-multi);
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.btn-gradient:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards and Containers */
+.card-accent-1 {
+    border-top: 3px solid var(--accent-1);
+}
+
+.card-accent-2 {
+    border-top: 3px solid var(--accent-2);
+}
+
+.card-accent-3 {
+    border-top: 3px solid var(--accent-3);
+}
+
+/* Backgrounds */
+.bg-primary-light {
+    background-color: var(--primary-light);
+}
+
+.bg-primary-ultra-light {
+    background-color: var(--primary-ultra-light);
+}
+
+.bg-accent-1 {
+    background-color: var(--accent-1);
+}
+
+.bg-accent-2 {
+    background-color: var(--accent-2);
+}
+
+.bg-accent-3 {
+    background-color: var(--accent-3);
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--primary);
+}
+
+.text-accent-1 {
+    color: var(--accent-1);
+}
+
+.text-accent-2 {
+    color: var(--accent-2);
+}
+
+.text-accent-3 {
+    color: var(--accent-3);
+}

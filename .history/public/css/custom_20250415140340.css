@@ -1,0 +1,215 @@
+/* Custom CSS for Modern Sentra */
+
+:root {
+    /* Primary Brand Colors - More Colorful Palette */
+    --primary: #118AB2;
+    /* Main brand color - vibrant blue */
+    --primary-dark: #073B4C;
+    /* Darker blue for hover states */
+    --primary-light: #5DB7D3;
+    /* Lighter blue for backgrounds */
+    --primary-ultra-light: #E0F7FF;
+    /* Very light blue for subtle backgrounds */
+
+    /* Accent Colors - Vibrant and Complementary */
+    --accent-1: #06D6A0;
+    /* Bright teal - modern and fresh */
+    --accent-1-light: #7AEAC8;
+    /* Lighter teal */
+    --accent-2: #FF6B6B;
+    /* Vibrant coral - warm accent */
+    --accent-2-light: #FF9E9E;
+    /* Lighter coral */
+    --accent-3: #FFD166;
+    /* Bright gold - attention-grabbing */
+    --accent-3-light: #FFE4A3;
+    /* Lighter gold */
+
+    /* Neutral Colors - Kept similar for consistency */
+    --dark: #2d2a26;
+    /* Almost black with brown undertone */
+    --gray-dark: #5a5754;
+    /* Dark gray with warm undertone */
+    --gray: #8c8883;
+    /* Medium gray with warm undertone */
+    --gray-light: #d8d3cf;
+    /* Light gray with warm undertone */
+    --light: #f8f6f4;
+    /* Off-white with warm undertone */
+
+    /* Gradient Colors */
+    --gradient-primary: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    --gradient-accent: linear-gradient(90deg, var(--accent-2), var(--accent-3));
+    --gradient-multi: linear-gradient(90deg, var(--accent-2), var(--accent-3), var(--accent-1), var(--primary), var(--primary-dark));
+}
+
+/* Logo styling */
+.logo-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.logo-modern {
+    color: var(--dark);
+}
+
+.logo-sentra {
+    color: var(--primary);
+}
+
+/* Construction theme elements */
+.construction-heading {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+}
+
+/* Body text */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gray-dark);
+    background-color: var(--light);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Navigation */
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-accent-1 {
+    background-color: var(--accent-1);
+    border-color: var(--accent-1);
+    color: white;
+}
+
+.btn-accent-1:hover {
+    background-color: var(--accent-1-light);
+    border-color: var(--accent-1-light);
+}
+
+.btn-accent-2 {
+    background-color: var(--accent-2);
+    border-color: var(--accent-2);
+    color: white;
+}
+
+.btn-accent-2:hover {
+    background-color: var(--accent-2-light);
+    border-color: var(--accent-2-light);
+}
+
+.btn-accent-3 {
+    background-color: var(--accent-3);
+    border-color: var(--accent-3);
+    color: white;
+}
+
+.btn-accent-3:hover {
+    background-color: var(--accent-3-light);
+    border-color: var(--accent-3-light);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-outline-accent-1 {
+    border: 2px solid var(--accent-1);
+    color: var(--accent-1);
+}
+
+.btn-outline-accent-1:hover {
+    background-color: var(--accent-1);
+    color: white;
+}
+
+/* Cards and Containers */
+.card-accent-1 {
+    border-top: 3px solid var(--accent-1);
+}
+
+.card-accent-2 {
+    border-top: 3px solid var(--accent-2);
+}
+
+.card-accent-3 {
+    border-top: 3px solid var(--accent-3);
+}
+
+/* Backgrounds */
+.bg-primary-light {
+    background-color: var(--primary-light);
+}
+
+.bg-primary-ultra-light {
+    background-color: var(--primary-ultra-light);
+}
+
+.bg-accent-1 {
+    background-color: var(--accent-1);
+}
+
+.bg-accent-2 {
+    background-color: var(--accent-2);
+}
+
+.bg-accent-3 {
+    background-color: var(--accent-3);
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--primary);
+}
+
+.text-accent-1 {
+    color: var(--accent-1);
+}
+
+.text-accent-2 {
+    color: var(--accent-2);
+}
+
+.text-accent-3 {
+    color: var(--accent-3);
+}

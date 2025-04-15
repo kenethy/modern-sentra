@@ -1,0 +1,164 @@
+/* Minimalist Contact Page Styling */
+
+/* Base Animations - Simplified */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* Hero Section - Simplified */
+.contact-hero {
+    position: relative;
+    background: linear-gradient(135deg, #99765c 0%, #b08e75 100%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Contact Cards - Minimalist */
+.contact-card {
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    transition: all 0.3s ease;
+    color: #99765c;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.1);
+}
+
+/* Form Styling - Minimalist */
+.form-container {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-input {
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.form-input:focus {
+    border-color: #99765c;
+    box-shadow: 0 0 0 2px rgba(153, 118, 92, 0.2);
+    outline: none;
+}
+
+.submit-button {
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #876754;
+}
+
+/* Map Styling - Minimalist */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Directions Card - Minimalist */
+.directions-card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+/* Social Media Section - Minimalist */
+.social-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container {
+        height: 300px;
+    }
+    
+    .contact-hero {
+        padding: 2rem 1rem;
+    }
+    
+    .contact-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Custom Scrollbar - Minimalist */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #99765c;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #876754;
+}

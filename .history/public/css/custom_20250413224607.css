@@ -1,0 +1,210 @@
+/* Custom CSS for Modern Sentra */
+
+:root {
+    /* Primary Brand Colors */
+    --primary: #99765c;
+    /* Main brand color - warm brown */
+    --primary-dark: #876754;
+    /* Darker brown for hover states */
+    --primary-light: #b79b86;
+    /* Lighter brown for backgrounds */
+    --primary-ultra-light: #f0e9e4;
+    /* Very light brown for subtle backgrounds */
+
+    /* Accent Colors */
+    --accent-1: #4a6741;
+    /* Forest green - complementary to brown */
+    --accent-1-light: #6b8a61;
+    /* Lighter green */
+    --accent-2: #d17a46;
+    /* Terracotta - warm accent */
+    --accent-2-light: #e6a585;
+    /* Lighter terracotta */
+    --accent-3: #486683;
+    /* Steel blue - cool accent */
+    --accent-3-light: #7a96af;
+    /* Lighter blue */
+
+    /* Neutral Colors */
+    --dark: #2d2a26;
+    /* Almost black with brown undertone */
+    --gray-dark: #5a5754;
+    /* Dark gray with warm undertone */
+    --gray: #8c8883;
+    /* Medium gray with warm undertone */
+    --gray-light: #d8d3cf;
+    /* Light gray with warm undertone */
+    --light: #f8f6f4;
+    /* Off-white with warm undertone */
+}
+
+/* Logo styling */
+.logo-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.logo-modern {
+    color: var(--dark);
+}
+
+.logo-sentra {
+    color: var(--primary);
+}
+
+/* Construction theme elements */
+.construction-heading {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+}
+
+/* Body text */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--gray-dark);
+    background-color: var(--light);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+/* Navigation */
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--gray-dark);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-accent-1 {
+    background-color: var(--accent-1);
+    border-color: var(--accent-1);
+    color: white;
+}
+
+.btn-accent-1:hover {
+    background-color: var(--accent-1-light);
+    border-color: var(--accent-1-light);
+}
+
+.btn-accent-2 {
+    background-color: var(--accent-2);
+    border-color: var(--accent-2);
+    color: white;
+}
+
+.btn-accent-2:hover {
+    background-color: var(--accent-2-light);
+    border-color: var(--accent-2-light);
+}
+
+.btn-accent-3 {
+    background-color: var(--accent-3);
+    border-color: var(--accent-3);
+    color: white;
+}
+
+.btn-accent-3:hover {
+    background-color: var(--accent-3-light);
+    border-color: var(--accent-3-light);
+}
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-outline-accent-1 {
+    border: 2px solid var(--accent-1);
+    color: var(--accent-1);
+}
+
+.btn-outline-accent-1:hover {
+    background-color: var(--accent-1);
+    color: white;
+}
+
+/* Cards and Containers */
+.card-accent-1 {
+    border-top: 3px solid var(--accent-1);
+}
+
+.card-accent-2 {
+    border-top: 3px solid var(--accent-2);
+}
+
+.card-accent-3 {
+    border-top: 3px solid var(--accent-3);
+}
+
+/* Backgrounds */
+.bg-primary-light {
+    background-color: var(--primary-light);
+}
+
+.bg-primary-ultra-light {
+    background-color: var(--primary-ultra-light);
+}
+
+.bg-accent-1 {
+    background-color: var(--accent-1);
+}
+
+.bg-accent-2 {
+    background-color: var(--accent-2);
+}
+
+.bg-accent-3 {
+    background-color: var(--accent-3);
+}
+
+/* Text colors */
+.text-primary {
+    color: var(--primary);
+}
+
+.text-accent-1 {
+    color: var(--accent-1);
+}
+
+.text-accent-2 {
+    color: var(--accent-2);
+}
+
+.text-accent-3 {
+    color: var(--accent-3);
+}
