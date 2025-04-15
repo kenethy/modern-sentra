@@ -547,7 +547,7 @@
                     <div class="tab-content-container">
                         {{-- Konten Detail --}}
                         <div id="details" class="tab-content active">
-                            <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                            <div class="bg-white rounded-lg p-5 border border-gray-100 shadow-sm">
                                 @if($product->details)
                                 <div class="prose max-w-none">
                                     {!! $product->details !!}
@@ -568,185 +568,124 @@
                                         </div>
                                     </div>
 
+                                    <div class="flex items-start">
+                                        <div class="bg-gray-100 p-1.5 rounded-full mr-3 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-900 text-base">Kualitas Terjamin</h3>
+                                            <p class="text-gray-700 mt-1">{{ $product->name }} adalah produk berkualitas
+                                                tinggi yang dirancang untuk memenuhi kebutuhan proyek konstruksi Anda.
+                                                Produk ini memiliki daya tahan yang baik dan mudah diaplikasikan.</p>
+                                        </div>
+                                    </div>
 
-
+                                    <div class="flex items-start">
+                                        <div class="bg-gray-100 p-1.5 rounded-full mr-3 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-medium text-gray-900 text-base">Dukungan Teknis</h3>
+                                            <p class="text-gray-700 mt-1">Untuk informasi lebih lanjut tentang produk
+                                                ini, silakan hubungi tim kami melalui tombol "Minta Penawaran Harga"
+                                                atau "Tanya via WhatsApp".</p>
+                                        </div>
+                                    </div>
                                 </div>
-
-
+                                @endif
                             </div>
-                            @endif
                         </div>
-                    </div>
 
-                    {{-- Konten Spesifikasi --}}
-                    <div id="specs" class="tab-content">
-                        <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                        {{-- Konten Spesifikasi --}}
+                        <div id="specs" class="tab-content">
                             @if($product->attributes->isNotEmpty())
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <dl class="spec-list-tab grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                                 @foreach($product->attributes as $attribute)
-                                <div class="bg-gray-50 p-2 rounded-lg hover:shadow-sm transition-shadow duration-300">
-                                    <h4 class="text-sm font-medium text-gray-500">{{ $attribute->name }}</h4>
-                                    <p class="text-sm font-semibold text-gray-900 mt-0.5">{{ $attribute->value }}
-                                    </p>
+                                <div>
+                                    <dt>{{ $attribute->name }}</dt>
+                                    <dd>{{ $attribute->value }}</dd>
                                 </div>
                                 @endforeach
-                            </div>
+                            </dl>
                             @else
-                            <div class="flex items-center p-2 bg-gray-50 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mr-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p class="text-gray-500 text-sm">Spesifikasi detail belum tersedia untuk produk ini.
-                                    Silakan
-                                    hubungi kami untuk informasi lebih lanjut.</p>
-                            </div>
+                            <p class="text-gray-500 text-sm">Spesifikasi teknis tidak tersedia.</p>
                             @endif
                         </div>
-                    </div>
 
-                    {{-- Konten Aplikasi --}}
-                    <div id="applications" class="tab-content">
-                        <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                        {{-- Konten Aplikasi --}}
+                        <div id="applications" class="tab-content">
                             @if($product->applications)
-                            <div class="prose max-w-none">
-                                {!! $product->applications !!}
-                            </div>
+                            {!! $product->applications !!} {{-- Anggap $product->applications sudah bersih/aman --}}
                             @else
-                            <div class="space-y-2">
-                                <p class="text-gray-700">{{ $product->name }} dapat digunakan untuk berbagai
-                                    aplikasi konstruksi, termasuk:</p>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi komersial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Ideal untuk bangunan perkantoran,
-                                                pusat perbelanjaan, dan fasilitas komersial lainnya.</p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi residensial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Cocok untuk rumah tinggal,
-                                                apartemen, dan kompleks perumahan.</p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek infrastruktur</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Dapat digunakan untuk jembatan,
-                                                jalan, dan proyek infrastruktur lainnya.</p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Renovasi dan perbaikan</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Sempurna untuk proyek renovasi dan
-                                                perbaikan bangunan yang sudah ada.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="text-gray-500 text-sm">Informasi aplikasi penggunaan tidak tersedia.</p>
                             @endif
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </div> @if($relatedProducts->isNotEmpty())
-    <div class="mt-20 lg:mt-28 pt-12 border-t border-gray-100"> {{-- Border lebih halus --}}
-        <h2 class="text-xl font-semibold text-gray-800 mb-8 text-center">Anda Mungkin Juga Suka</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"> {{-- Coba 4 kolom --}}
-            @foreach($relatedProducts as $relatedProduct)
-            <div class="related-product-card group"> {{-- Tambah class group untuk hover state --}}
-                <a href="{{ route('products.show', $relatedProduct) }}" class="block">
-                    <div class="img-container">
-                        @if($relatedProduct->hasMedia('product_images'))
-                        <img src="{{ $relatedProduct->getFirstMediaUrl('product_images') }}"
-                            alt="{{ $relatedProduct->name }}"
-                            class="transition-transform duration-300 group-hover:scale-105">
-                        @else
-                        <div class="w-full h-full flex items-center justify-center p-4">
-                            <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
+            </div>
+        </div> @if($relatedProducts->isNotEmpty())
+        <div class="mt-20 lg:mt-28 pt-12 border-t border-gray-100"> {{-- Border lebih halus --}}
+            <h2 class="text-xl font-semibold text-gray-800 mb-8 text-center">Anda Mungkin Juga Suka</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"> {{-- Coba 4 kolom --}}
+                @foreach($relatedProducts as $relatedProduct)
+                <div class="related-product-card group"> {{-- Tambah class group untuk hover state --}}
+                    <a href="{{ route('products.show', $relatedProduct) }}" class="block">
+                        <div class="img-container">
+                            @if($relatedProduct->hasMedia('product_images'))
+                            <img src="{{ $relatedProduct->getFirstMediaUrl('product_images') }}"
+                                alt="{{ $relatedProduct->name }}"
+                                class="transition-transform duration-300 group-hover:scale-105">
+                            @else
+                            <div class="w-full h-full flex items-center justify-center p-4">
+                                <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            @endif
                         </div>
-                        @endif
-                    </div>
-                    <div class="p-4">
-                        <h3
-                            class="text-sm font-semibold text-gray-800 mb-1 line-clamp-1 group-hover:text-[#99765c] transition-colors">
-                            {{ $relatedProduct->name }}</h3>
-                        {{-- Hilangkan deskripsi singkat di related untuk lebih minimalis? Opsional --}}
-                        {{-- <p class="text-xs text-gray-500 line-clamp-2 mb-3">{{
-                            Str::limit($relatedProduct->description, 50) }}</p> --}}
-                        <span class="link-details group-hover:underline">
-                            Lihat Detail
-                        </span>
-                    </div>
-                </a>
+                        <div class="p-4">
+                            <h3
+                                class="text-sm font-semibold text-gray-800 mb-1 line-clamp-1 group-hover:text-[#99765c] transition-colors">
+                                {{ $relatedProduct->name }}</h3>
+                            {{-- Hilangkan deskripsi singkat di related untuk lebih minimalis? Opsional --}}
+                            {{-- <p class="text-xs text-gray-500 line-clamp-2 mb-3">{{
+                                Str::limit($relatedProduct->description, 50) }}</p> --}}
+                            <span class="link-details group-hover:underline">
+                                Lihat Detail
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
-    </div>
-    @endif
+        @endif
 
-    <div class="mt-16 text-center">
-        <a href="{{ route('products.index') }}"
-            class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-800 transition-colors group">
-            <svg class="w-3 h-3 mr-1.5 transition-transform duration-200 group-hover:-translate-x-1" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
-                </path>
-            </svg>
-            Lihat Semua Produk
-        </a>
-    </div>
+        <div class="mt-16 text-center">
+            <a href="{{ route('products.index') }}"
+                class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-800 transition-colors group">
+                <svg class="w-3 h-3 mr-1.5 transition-transform duration-200 group-hover:-translate-x-1" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                Lihat Semua Produk
+            </a>
+        </div>
 
-</div>
+    </div>
 </div>
 
 <div id="lightbox" class="lightbox">

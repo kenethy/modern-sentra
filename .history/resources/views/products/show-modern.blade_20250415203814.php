@@ -580,26 +580,25 @@
 
                     {{-- Konten Spesifikasi --}}
                     <div id="specs" class="tab-content">
-                        <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                        <div class="bg-white rounded-lg p-5 border border-gray-100 shadow-sm">
                             @if($product->attributes->isNotEmpty())
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 @foreach($product->attributes as $attribute)
-                                <div class="bg-gray-50 p-2 rounded-lg hover:shadow-sm transition-shadow duration-300">
+                                <div class="bg-gray-50 p-4 rounded-lg hover:shadow-sm transition-shadow duration-300">
                                     <h4 class="text-sm font-medium text-gray-500">{{ $attribute->name }}</h4>
-                                    <p class="text-sm font-semibold text-gray-900 mt-0.5">{{ $attribute->value }}
+                                    <p class="text-base font-semibold text-gray-900 mt-1">{{ $attribute->value }}
                                     </p>
                                 </div>
                                 @endforeach
                             </div>
                             @else
-                            <div class="flex items-center p-2 bg-gray-50 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mr-2" fill="none"
+                            <div class="flex items-center p-4 bg-gray-50 rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-400 mr-3" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                <p class="text-gray-500 text-sm">Spesifikasi detail belum tersedia untuk produk ini.
-                                    Silakan
+                                <p class="text-gray-500">Spesifikasi detail belum tersedia untuk produk ini. Silakan
                                     hubungi kami untuk informasi lebih lanjut.</p>
                             </div>
                             @endif
@@ -614,13 +613,13 @@
                                 {!! $product->applications !!}
                             </div>
                             @else
-                            <div class="space-y-2">
+                            <div class="space-y-4">
                                 <p class="text-gray-700">{{ $product->name }} dapat digunakan untuk berbagai
                                     aplikasi konstruksi, termasuk:</p>
 
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -629,15 +628,14 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi komersial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Ideal untuk bangunan perkantoran,
+                                            <h3 class="font-medium text-gray-900">Proyek konstruksi komersial</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Ideal untuk bangunan perkantoran,
                                                 pusat perbelanjaan, dan fasilitas komersial lainnya.</p>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -646,15 +644,14 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi residensial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Cocok untuk rumah tinggal,
+                                            <h3 class="font-medium text-gray-900">Proyek konstruksi residensial</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Cocok untuk rumah tinggal,
                                                 apartemen, dan kompleks perumahan.</p>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -663,14 +660,14 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek infrastruktur</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Dapat digunakan untuk jembatan,
+                                            <h3 class="font-medium text-gray-900">Proyek infrastruktur</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Dapat digunakan untuk jembatan,
                                                 jalan, dan proyek infrastruktur lainnya.</p>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -679,8 +676,8 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Renovasi dan perbaikan</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Sempurna untuk proyek renovasi dan
+                                            <h3 class="font-medium text-gray-900">Renovasi dan perbaikan</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Sempurna untuk proyek renovasi dan
                                                 perbaikan bangunan yang sudah ada.</p>
                                         </div>
                                     </div>

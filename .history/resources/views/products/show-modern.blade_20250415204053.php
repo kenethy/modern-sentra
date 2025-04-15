@@ -614,13 +614,13 @@
                                 {!! $product->applications !!}
                             </div>
                             @else
-                            <div class="space-y-2">
+                            <div class="space-y-4">
                                 <p class="text-gray-700">{{ $product->name }} dapat digunakan untuk berbagai
                                     aplikasi konstruksi, termasuk:</p>
 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -629,15 +629,14 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi komersial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Ideal untuk bangunan perkantoran,
+                                            <h3 class="font-medium text-gray-900">Proyek konstruksi komersial</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Ideal untuk bangunan perkantoran,
                                                 pusat perbelanjaan, dan fasilitas komersial lainnya.</p>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -646,15 +645,14 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi residensial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Cocok untuk rumah tinggal,
+                                            <h3 class="font-medium text-gray-900">Proyek konstruksi residensial</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Cocok untuk rumah tinggal,
                                                 apartemen, dan kompleks perumahan.</p>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -663,14 +661,14 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek infrastruktur</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Dapat digunakan untuk jembatan,
+                                            <h3 class="font-medium text-gray-900">Proyek infrastruktur</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Dapat digunakan untuk jembatan,
                                                 jalan, dan proyek infrastruktur lainnya.</p>
                                         </div>
                                     </div>
 
                                     <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
+                                        class="bg-gray-50 p-3 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
                                         <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
                                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -679,8 +677,8 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Renovasi dan perbaikan</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Sempurna untuk proyek renovasi dan
+                                            <h3 class="font-medium text-gray-900">Renovasi dan perbaikan</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Sempurna untuk proyek renovasi dan
                                                 perbaikan bangunan yang sudah ada.</p>
                                         </div>
                                     </div>

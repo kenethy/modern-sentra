@@ -289,7 +289,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </a>
-                            <a href="{{ route('quote-request.create', ['product_id' => $product->id]) }}"
+                            <a href="{{ route('quote-request.product', ['product_id' => $product->id]) }}"
                                 class="w-full sm:w-auto text-center bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold py-2 px-4 rounded-md transition duration-300 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-1">
                                 Minta Penawaran
                             </a>

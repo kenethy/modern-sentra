@@ -614,7 +614,7 @@
                                 {!! $product->applications !!}
                             </div>
                             @else
-                            <div class="space-y-2">
+                            <div class="space-y-4">
                                 <p class="text-gray-700">{{ $product->name }} dapat digunakan untuk berbagai
                                     aplikasi konstruksi, termasuk:</p>
 

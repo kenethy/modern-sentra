@@ -38,8 +38,15 @@ class QuoteRequestController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        // Menggunakan view yang lebih sederhana untuk permintaan penawaran produk tunggal
-        return view('quote-request.single-product-quote', compact('product'));
+        // Get all products grouped by category for selection (jika diperlukan)
+        $categories = Category::with(['products' => function ($query) {
+            $query->orderBy('name');
+        }])->orderBy('name')->get();
+
+        // Get featured products for quick selection (jika diperlukan)
+        $featuredProducts = Product::where('is_featured', true)->take(6)->get();
+
+        return view('quote-request.product-quote', compact('product', 'categories', 'featuredProducts'));
     }
 
     /**

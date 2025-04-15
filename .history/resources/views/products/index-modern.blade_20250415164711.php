@@ -289,7 +289,7 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </a>
-                            <a href="{{ route('quote-request.create', ['product_id' => $product->id]) }}"
+                            <a href="{{ route('quote-request.product', ['product_id' => $product->id]) }}"
                                 class="w-full sm:w-auto text-center bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold py-2 px-4 rounded-md transition duration-300 shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-1">
                                 Minta Penawaran
                             </a>
@@ -317,7 +317,7 @@
                         proyek Anda. Jangan ragu untuk menghubungi kami.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 flex-shrink-0">
-                    <a href="{{ route('quote-request.create') }}"
+                    <a href="{{ route('quote-request.product') }}"
                         class="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-800 font-medium rounded-md shadow-md hover:bg-gray-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-700" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

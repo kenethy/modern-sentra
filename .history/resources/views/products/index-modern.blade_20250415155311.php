@@ -318,16 +318,16 @@
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 flex-shrink-0">
                     <a href="{{ route('quote-request.create') }}"
-                        class="inline-flex items-center justify-center px-6 py-3 bg-white text-gray-800 font-medium rounded-md shadow-md hover:bg-gray-50 transition duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-gray-700" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        class="inline-flex items-center justify-center px-6 py-3 brand-bg text-white font-medium rounded-lg shadow-md hover:brand-bg-dark transition duration-300 transform hover:scale-105 focus:outline-none brand-ring-focus focus:ring-offset-2 focus:ring-offset-slate-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
                         Minta Penawaran
                     </a>
                     <a href="{{ route('contact') }}"
-                        class="inline-flex items-center justify-center px-6 py-3 bg-gray-800 text-white font-medium rounded-md shadow-md hover:bg-gray-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 focus:ring-offset-white">
+                        class="inline-flex items-center justify-center px-6 py-3 bg-white text-slate-700 font-medium rounded-lg shadow-md hover:bg-slate-100 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-800">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
@@ -341,7 +341,7 @@
 
         {{-- Back to Top Button --}}
         <button id="backToTop"
-            class="fixed bottom-8 right-8 bg-gray-800 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2">
+            class="fixed bottom-8 right-8 brand-bg text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 z-50 hover:brand-bg-dark focus:outline-none brand-ring-focus focus:ring-offset-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                 stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />

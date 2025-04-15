@@ -1,9 +1,9 @@
-{{-- resources/views/products/show_ultra_modern.blade.php (Contoh nama file baru) --}}
 @extends('layouts.app')
 
-@section('title', $product->name)
+@section('title', $product->name . ' - Product Details')
 
 @push('styles')
+{{-- Add any specific styles for this page if needed --}}
 {{--
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -201,18 +201,25 @@
     /* Tab Content - Clean Prose */
     .tab-content {
         display: none;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
         color: #374151;
         /* Gray-700 */
         font-size: 0.9375rem;
         /* Slightly larger base text (15px) */
         line-height: 1.65;
         /* Improved readability */
+        transition: opacity 0.3s ease;
     }
 
     .tab-content.active {
-        display: block;
-        animation: fadeIn 0.5s ease forwards;
-        /* Gunakan animasi dari inspirasi */
+        display: block !important;
+        opacity: 1 !important;
+        height: auto !important;
+        overflow: visible !important;
+        animation: none !important;
+        /* Hindari animasi yang mungkin bermasalah */
     }
 
     @keyframes fadeIn {
@@ -440,10 +447,10 @@
 @endpush
 
 @section('content')
-<div class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8"> {{-- Background putih bersih, padding lebih lega --}}
+<div class="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8"> {{-- Reduced padding --}}
     <div class="max-w-7xl mx-auto">
-        <nav class="mb-10 text-xs text-gray-500" aria-label="Breadcrumb"> {{-- Teks lebih kecil --}}
-            <ol class="inline-flex items-center space-x-1 md:space-x-2">
+        <nav class="mb-8 text-xs text-gray-400" aria-label="Breadcrumb"> {{-- Reduced margin, slightly lighter text --}}
+            <ol class="inline-flex items-center space-x-1 md:space-x-1.5"> {{-- Reduced space --}}
                 {{-- Konten breadcrumbs sama --}}
                 <li class="inline-flex items-center"><a href="{{ route('home') }}"
                         class="hover:text-[#99765c] transition-colors">Beranda</a></li>
@@ -456,7 +463,7 @@
             </ol>
         </nav>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20"> {{-- Gap lebih besar --}}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16"> {{-- Reduced gap --}}
 
             <div class="product-gallery">
                 {{-- Main Image --}}
@@ -508,37 +515,38 @@
                 </div>
 
                 {{-- Nama Produk --}}
-                <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">{{ $product->name }}</h1>
+                <h1 class="text-2xl lg:text-3xl font-semibold text-gray-900 mb-3 leading-snug">{{ $product->name }}</h1>
+                {{-- Smaller heading, less margin --}}
 
                 {{-- Deskripsi Singkat --}}
-                <p class="text-base text-gray-600 mb-8">{{ $product->description }}</p>
+                <p class="text-sm text-gray-600 mb-6">{{ $product->description }}</p> {{-- Smaller text, less margin
+                --}}
 
                 {{-- Tombol Aksi (CTA) - Ditempatkan sebelum Tab --}}
-                <div class="flex flex-col sm:flex-row gap-3 mt-auto pt-6"> {{-- mt-auto push ke bawah jika kolom kanan
-                    lebih tinggi, pt-6 beri jarak --}}
+                <div class="flex flex-col sm:flex-row gap-2.5 mt-auto pt-5"> {{-- Reduced gap, reduced padding top --}}
                     <a href="{{ route('quote-request.product', ['id' => $product->id]) }}"
                         class="cta-button cta-primary w-full sm:w-auto">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
                             </path>
-                        </svg>
+                        </svg> {{-- Reduced icon margin --}}
                         Minta Penawaran
                     </a>
                     <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', setting('contact.whatsapp', '6281234567890')) }}?text=Halo, saya tertarik dengan produk {{ $product->name }}."
                         target="_blank" class="cta-button cta-secondary w-full sm:w-auto">
-                        <svg class="w-4 h-4 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="w-4 h-4 mr-1.5" viewBox="0 0 24 24" fill="currentColor">
                             <path
                                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
+                        </svg> {{-- Reduced icon margin --}}
                         Tanya via WhatsApp
                     </a>
                 </div>
 
                 {{-- Kontainer Tab --}}
                 <div class="product-tabs">
-                    <div class="tab-buttons-container">
+                    <div class="tab-buttons-container mb-1rem"> {{-- Reduced margin bottom --}}
                         <button class="tab-button active" data-tab="details">Detail</button>
                         <button class="tab-button" data-tab="specs">Spesifikasi</button>
                         <button class="tab-button" data-tab="applications">Aplikasi</button>
@@ -546,207 +554,103 @@
 
                     <div class="tab-content-container">
                         {{-- Konten Detail --}}
-                        <div id="details" class="tab-content active">
-                            <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
-                                @if($product->details)
-                                <div class="prose max-w-none">
-                                    {!! $product->details !!}
-                                </div>
-                                @else
-                                <div class="space-y-4">
-                                    <div class="flex items-start">
-                                        <div class="bg-gray-100 p-1.5 rounded-full mr-3 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-600"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-base">Deskripsi Produk</h3>
-                                            <p class="text-gray-700 mt-1">{{ $product->description }}</p>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
-
-
-                            </div>
+                        <div id="details" class="tab-content active text-sm"> {{-- Smaller base text for tab content
+                            --}}
+                            @if($product->details)
+                            {!! $product->details !!} {{-- Anggap $product->details sudah bersih/aman --}}
+                            @else
+                            {{-- Tampilkan deskripsi panjang lagi jika tidak ada $product->details --}}
+                            <p>{{ $product->description }}</p>
+                            <p class="mt-3 text-gray-500 text-xs">Informasi detail lengkap belum tersedia.</p> {{--
+                            Smaller text --}}
                             @endif
                         </div>
-                    </div>
 
-                    {{-- Konten Spesifikasi --}}
-                    <div id="specs" class="tab-content">
-                        <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                        {{-- Konten Spesifikasi --}}
+                        <div id="specs" class="tab-content text-sm"> {{-- Smaller base text --}}
                             @if($product->attributes->isNotEmpty())
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <dl class="spec-list-tab grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-3"> {{-- Reduced gap
+                                --}}
                                 @foreach($product->attributes as $attribute)
-                                <div class="bg-gray-50 p-2 rounded-lg hover:shadow-sm transition-shadow duration-300">
-                                    <h4 class="text-sm font-medium text-gray-500">{{ $attribute->name }}</h4>
-                                    <p class="text-sm font-semibold text-gray-900 mt-0.5">{{ $attribute->value }}
-                                    </p>
+                                <div>
+                                    <dt class="text-xs font-medium">{{ $attribute->name }}</dt> {{-- Smaller dt --}}
+                                    <dd class="text-xs">{{ $attribute->value }}</dd> {{-- Smaller dd --}}
                                 </div>
                                 @endforeach
-                            </div>
+                            </dl>
                             @else
-                            <div class="flex items-center p-2 bg-gray-50 rounded-lg">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 mr-2" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <p class="text-gray-500 text-sm">Spesifikasi detail belum tersedia untuk produk ini.
-                                    Silakan
-                                    hubungi kami untuk informasi lebih lanjut.</p>
-                            </div>
+                            <p class="text-gray-500 text-xs">Spesifikasi teknis tidak tersedia.</p> {{-- Smaller text
+                            --}}
                             @endif
                         </div>
-                    </div>
 
-                    {{-- Konten Aplikasi --}}
-                    <div id="applications" class="tab-content">
-                        <div class="bg-white rounded-lg p-3 border border-gray-100 shadow-sm">
+                        {{-- Konten Aplikasi --}}
+                        <div id="applications" class="tab-content text-sm"> {{-- Smaller base text --}}
                             @if($product->applications)
-                            <div class="prose max-w-none">
-                                {!! $product->applications !!}
-                            </div>
+                            {!! $product->applications !!} {{-- Anggap $product->applications sudah bersih/aman --}}
                             @else
-                            <div class="space-y-2">
-                                <p class="text-gray-700">{{ $product->name }} dapat digunakan untuk berbagai
-                                    aplikasi konstruksi, termasuk:</p>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-2">
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi komersial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Ideal untuk bangunan perkantoran,
-                                                pusat perbelanjaan, dan fasilitas komersial lainnya.</p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi residensial
-                                            </h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Cocok untuk rumah tinggal,
-                                                apartemen, dan kompleks perumahan.</p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek infrastruktur</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Dapat digunakan untuk jembatan,
-                                                jalan, dan proyek infrastruktur lainnya.</p>
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="bg-gray-50 p-2 rounded-lg flex items-start hover:shadow-md transition-shadow duration-300">
-                                        <div class="bg-gray-800 p-1.5 rounded-full mr-2 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Renovasi dan perbaikan</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Sempurna untuk proyek renovasi dan
-                                                perbaikan bangunan yang sudah ada.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="text-gray-500 text-xs">Informasi aplikasi penggunaan tidak tersedia.</p> {{--
+                            Smaller text --}}
                             @endif
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </div> @if($relatedProducts->isNotEmpty())
-    <div class="mt-20 lg:mt-28 pt-12 border-t border-gray-100"> {{-- Border lebih halus --}}
-        <h2 class="text-xl font-semibold text-gray-800 mb-8 text-center">Anda Mungkin Juga Suka</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"> {{-- Coba 4 kolom --}}
-            @foreach($relatedProducts as $relatedProduct)
-            <div class="related-product-card group"> {{-- Tambah class group untuk hover state --}}
-                <a href="{{ route('products.show', $relatedProduct) }}" class="block">
-                    <div class="img-container">
-                        @if($relatedProduct->hasMedia('product_images'))
-                        <img src="{{ $relatedProduct->getFirstMediaUrl('product_images') }}"
-                            alt="{{ $relatedProduct->name }}"
-                            class="transition-transform duration-300 group-hover:scale-105">
-                        @else
-                        <div class="w-full h-full flex items-center justify-center p-4">
-                            <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
-                                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                </path>
-                            </svg>
+            </div>
+        </div> @if($relatedProducts->isNotEmpty())
+        <div class="mt-16 lg:mt-20 pt-10 border-t border-gray-100"> {{-- Reduced margin/padding, border halus --}}
+            <h2 class="text-lg font-medium text-gray-800 mb-6 text-center">Anda Mungkin Juga Suka</h2> {{-- Smaller
+            heading, less margin --}}
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6"> {{-- Adjusted grid cols & gap
+                --}}
+                @foreach($relatedProducts as $relatedProduct)
+                <div
+                    class="related-product-card group border border-transparent hover:border-gray-200 transition-colors duration-200">
+                    {{-- Subtle border on hover --}}
+                    <a href="{{ route('products.show', $relatedProduct) }}" class="block">
+                        <div class="img-container bg-gray-50"> {{-- Lighter bg --}}
+                            @if($relatedProduct->hasMedia('product_images'))
+                            <img src="{{ $relatedProduct->getFirstMediaUrl('product_images') }}"
+                                alt="{{ $relatedProduct->name }}"
+                                class="transition-transform duration-300 group-hover:scale-103"> {{-- Less scale --}}
+                            @else
+                            <div class="w-full h-full flex items-center justify-center p-3">
+                                <svg class="w-10 h-10 text-gray-300" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg> {{-- Smaller placeholder --}}
+                            </div>
+                            @endif
                         </div>
-                        @endif
-                    </div>
-                    <div class="p-4">
-                        <h3
-                            class="text-sm font-semibold text-gray-800 mb-1 line-clamp-1 group-hover:text-[#99765c] transition-colors">
-                            {{ $relatedProduct->name }}</h3>
-                        {{-- Hilangkan deskripsi singkat di related untuk lebih minimalis? Opsional --}}
-                        {{-- <p class="text-xs text-gray-500 line-clamp-2 mb-3">{{
-                            Str::limit($relatedProduct->description, 50) }}</p> --}}
-                        <span class="link-details group-hover:underline">
-                            Lihat Detail
-                        </span>
-                    </div>
-                </a>
+                        <div class="p-3"> {{-- Reduced padding --}}
+                            <h3
+                                class="text-xs font-medium text-gray-700 mb-0.5 line-clamp-1 group-hover:text-[#99765c] transition-colors">
+                                {{ $relatedProduct->name }}</h3> {{-- Smaller text --}}
+                            {{-- Removed "Lihat Detail" text for minimalism --}}
+                        </div>
+                    </a>
+                </div>
+                @endforeach
             </div>
-            @endforeach
         </div>
-    </div>
-    @endif
+        @endif
 
-    <div class="mt-16 text-center">
-        <a href="{{ route('products.index') }}"
-            class="inline-flex items-center text-xs font-medium text-gray-500 hover:text-gray-800 transition-colors group">
-            <svg class="w-3 h-3 mr-1.5 transition-transform duration-200 group-hover:-translate-x-1" fill="none"
-                stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
-                </path>
-            </svg>
-            Lihat Semua Produk
-        </a>
-    </div>
+        <div class="mt-12 text-center"> {{-- Reduced margin --}}
+            <a href="{{ route('products.index') }}"
+                class="inline-flex items-center text-xs font-medium text-gray-400 hover:text-gray-700 transition-colors group">
+                {{-- Lighter text --}}
+                <svg class="w-3 h-3 mr-1 transition-transform duration-200 group-hover:-translate-x-0.5" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg> {{-- Reduced margin, less translate --}}
+                Lihat Semua Produk
+            </a>
+        </div>
 
-</div>
+    </div>
 </div>
 
 <div id="lightbox" class="lightbox">
@@ -785,6 +689,24 @@
         const tabContents = document.querySelectorAll('.tab-content');
 
         if (tabButtons.length > 0 && tabContents.length > 0) {
+            // Pastikan tab pertama aktif secara default
+            if (tabContents[0] && !tabContents[0].classList.contains('active')) {
+                tabContents[0].classList.add('active');
+            }
+            if (tabButtons[0] && !tabButtons[0].classList.contains('active')) {
+                tabButtons[0].classList.add('active');
+            }
+
+            // Pastikan semua tab content memiliki display: block jika active
+            tabContents.forEach(content => {
+                if (content.classList.contains('active')) {
+                    content.style.display = 'block';
+                    content.style.opacity = '1';
+                    content.style.height = 'auto';
+                    content.style.overflow = 'visible';
+                }
+            });
+
             tabButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     const tabId = this.dataset.tab;
@@ -793,10 +715,19 @@
                     if (targetContent) {
                         // Nonaktifkan semua
                         tabButtons.forEach(btn => btn.classList.remove('active'));
-                        tabContents.forEach(content => content.classList.remove('active'));
+                        tabContents.forEach(content => {
+                            content.classList.remove('active');
+                            content.style.display = 'none';
+                            content.style.opacity = '0';
+                        });
+
                         // Aktifkan yang diklik
                         this.classList.add('active');
                         targetContent.classList.add('active');
+                        targetContent.style.display = 'block';
+                        targetContent.style.opacity = '1';
+                        targetContent.style.height = 'auto';
+                        targetContent.style.overflow = 'visible';
                     }
                 });
             });
@@ -824,11 +755,8 @@
             images.push(mainImage.src);
         }
         if (images.length === 0) { // Placeholder fallback
-            @if ($product -> hasMedia('product_images'))
-                images.push("{{ $product->getFirstMediaUrl('product_images') }}");
-            @else
-            images.push("{{ asset('images/placeholder-product-minimal.svg') }}"); // Match placeholder in HTML
-            @endif
+            // Use Blade ternary to output the correct URL string server-side
+            images.push("{{ $product->hasMedia('product_images') ? $product->getFirstMediaUrl('product_images') : asset('images/placeholder-product-minimal.svg') }}");
         }
 
         let isLightboxOpen = false;

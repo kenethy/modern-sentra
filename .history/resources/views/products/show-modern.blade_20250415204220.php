@@ -614,7 +614,7 @@
                                 {!! $product->applications !!}
                             </div>
                             @else
-                            <div class="space-y-2">
+                            <div class="space-y-4">
                                 <p class="text-gray-700">{{ $product->name }} dapat digunakan untuk berbagai
                                     aplikasi konstruksi, termasuk:</p>
 
@@ -629,8 +629,7 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi komersial
-                                            </h3>
+                                            <h3 class="font-medium text-gray-900">Proyek konstruksi komersial</h3>
                                             <p class="text-xs text-gray-600 mt-0.5">Ideal untuk bangunan perkantoran,
                                                 pusat perbelanjaan, dan fasilitas komersial lainnya.</p>
                                         </div>
@@ -646,8 +645,7 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek konstruksi residensial
-                                            </h3>
+                                            <h3 class="font-medium text-gray-900">Proyek konstruksi residensial</h3>
                                             <p class="text-xs text-gray-600 mt-0.5">Cocok untuk rumah tinggal,
                                                 apartemen, dan kompleks perumahan.</p>
                                         </div>
@@ -663,8 +661,8 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Proyek infrastruktur</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Dapat digunakan untuk jembatan,
+                                            <h3 class="font-medium text-gray-900">Proyek infrastruktur</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Dapat digunakan untuk jembatan,
                                                 jalan, dan proyek infrastruktur lainnya.</p>
                                         </div>
                                     </div>
@@ -679,8 +677,8 @@
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 class="font-medium text-gray-900 text-sm">Renovasi dan perbaikan</h3>
-                                            <p class="text-xs text-gray-600 mt-0.5">Sempurna untuk proyek renovasi dan
+                                            <h3 class="font-medium text-gray-900">Renovasi dan perbaikan</h3>
+                                            <p class="text-sm text-gray-600 mt-1">Sempurna untuk proyek renovasi dan
                                                 perbaikan bangunan yang sudah ada.</p>
                                         </div>
                                     </div>
