@@ -25,7 +25,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
-                        <span>Kirim Pesan</span>
+                        <span>Kirim Pesan/Cek Stok</span>
                     </a>
                     <a href="#location"
                         class="inline-flex items-center justify-center px-5 py-2 bg-black/20 backdrop-blur-sm border border-white/30 text-white font-medium rounded-md shadow-sm hover:bg-black/30 hover:shadow-md transition-all duration-300">
@@ -157,8 +157,8 @@
                 <div
                     class="form-container bg-white p-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 construction-heading relative inline-block">
-                        <span>KIRIM PESAN/TANYA STOK GUDANG</span>
-                        <span class="absolute bottom-0 left-0 w-80 h-1 bg-gray-800"></span>
+                        <span>KIRIM PESAN</span>
+                        <span class="absolute bottom-0 left-0 w-1/3 h-1 bg-gray-800"></span>
                     </h2>
 
                     <form id="contactForm" class="flex-grow flex flex-col" onsubmit="sendWhatsAppMessage(event)">
@@ -199,9 +199,9 @@
                                 class="form-input w-full border border-gray-300 rounded-md py-2 px-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-gray-800 transition-all duration-200 h-full min-h-[150px]"></textarea>
                         </div>
 
-
+                        
                         <div class="mt-auto flex gap-3">
-
+                            
                             <button type="button" onclick="sendWhatsAppMessage(event, true)"
                                 class="whatsapp-button mt-6 flex-1 bg-green-500 hover:bg-gray-500 text-white font-medium py-2 px-4 rounded-md shadow-sm hover:shadow-md transition-all duration-300 inline-flex items-center justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5 flex-shrink-0"

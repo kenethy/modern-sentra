@@ -157,8 +157,8 @@
                 <div
                     class="form-container bg-white p-6 rounded-md shadow-sm hover:shadow-md transition-all duration-300">
                     <h2 class="text-2xl font-bold text-gray-800 mb-6 construction-heading relative inline-block">
-                        <span>KIRIM PESAN/TANYA STOK GUDANG</span>
-                        <span class="absolute bottom-0 left-0 w-80 h-1 bg-gray-800"></span>
+                        <span>KIRIM PESAN/TANYA Gudang</span>
+                        <span class="absolute bottom-0 left-0 w-1/3 h-1 bg-gray-800"></span>
                     </h2>
 
                     <form id="contactForm" class="flex-grow flex flex-col" onsubmit="sendWhatsAppMessage(event)">

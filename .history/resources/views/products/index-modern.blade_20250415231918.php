@@ -30,25 +30,6 @@
         /* Start hidden */
     }
 
-    /* Pulsing animation for 50% text */
-    @keyframes pulse {
-        0% {
-            transform: scale(1.1);
-        }
-
-        50% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            transform: scale(1.1);
-        }
-    }
-
-    .pulse-animation {
-        animation: pulse 2s infinite ease-in-out;
-    }
-
     /* Brand color variables for easier management */
     :root {
         --brand-color: #99765c;
@@ -352,7 +333,7 @@
                     <p class="text-slate-300 max-w-2xl">Tim ahli kami siap membantu Anda menemukan solusi terbaik untuk
                         proyek Anda. Jangan ragu untuk menghubungi kami.</p>
                     <p class="text-slate-300 max-w-2xl">Perlu Diketahui Etalase yang tersedia di website hanya <span
-                            class="text-white text-2xl font-bold inline-block px-1 pulse-animation">50%</span> dari
+                            class="text-white text-xl font-bold inline-block transform scale-110 px-1">50%</span> dari
                         stok asli kami</p>
 
                 </div>
