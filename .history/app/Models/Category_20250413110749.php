@@ -21,16 +21,6 @@ class Category extends Model
         'slug',
         'parent_id', // Pastikan ini bisa diisi jika Anda ingin set parent saat create/update
         'description',
-        'specifications',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'specifications' => 'array',
     ];
 
     /**
